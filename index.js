@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
+const dotenv = require('dotenv')
+dotenv.config()
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb+srv://kmass8754:karthick877@karthicktask.bbjj1ye.mongodb.net/foodDeliveryApp" ,{
+mongoose.connect( process.env.db ,{
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
